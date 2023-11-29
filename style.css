@@ -1,0 +1,704 @@
+body {
+	font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+	background-color: #ffecec;
+	margin: 0;
+	transition: 1s; 	
+}
+
+body::after {
+	content: "";
+	background: url(pictures/background.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	opacity: 0.10;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	z-index: -1;   
+}
+
+div.logo	{
+	display: inline-block;
+}
+
+img.logo	{
+	position:fixed;
+	width: 140px;
+	float: left;	
+	cursor: pointer;	
+	margin-top: -14px;
+}
+
+div.title	{
+	margin-left: 135px;
+	padding-bottom: 8px;
+}
+
+h1	{
+	text-decoration: underline;	
+}
+
+div.toevoegen	{
+	display: inline-block;
+	float: right;
+}
+
+div.container	{
+	position: relative;
+	margin: auto;
+	width:100%;
+	max-width: 1000px;
+	padding-bottom: 80px;
+}
+
+div.pre-box	{
+	width: 150px;
+	height: 100%;
+	float: left;
+	display: inline-block;
+}
+
+div.reparaties	{
+	float: left;
+	display: inline-block;		
+	letter-spacing: 0.5px;
+	margin-left: 85px;
+}
+
+#reparaties-boven	{
+	margin-top: 150px;
+}
+
+#reparaties-onder	{
+	margin-bottom: 10px;
+}
+
+#empty	{
+	font-size: 20px;		
+}
+	
+a.reparatie	{
+	text-decoration: none;
+}
+
+div.reparatie	{
+	background-image: linear-gradient(#990000, #cc0000, #990000);
+	box-shadow: 8px 8px 8px #616161;
+	border-radius: 10px;
+	color: #ffffff;
+	margin: 8px 0;
+	font-size: 20px;
+    font-weight: bold;
+	padding: 10px 10px 10px 13px;
+	display:inline-block;
+}
+
+div.reparatie:hover	{
+	background-image: linear-gradient(#990000, #ec0000, #990000);		
+}
+
+
+a.reparatie{
+	color: #ffffff;
+}
+
+div.selected{
+	background-image: linear-gradient(#990000, #ec0000, #ffecec);
+	box-shadow: none;
+	margin-bottom: 0px;
+	border-radius: 8px 8px 0 0;
+	padding-bottom: 25px;
+}
+
+div.selected:hover	{
+	background-image: linear-gradient(#990000, #ec0000, #ffecec);	
+}
+
+span.infodatum	{
+	color: #000000;
+	position: absolute;
+    margin-left: -100px;
+	margin-top: -10px;
+    font-size: 12px;
+    font-weight: bold;	
+	text-align: right;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 80px;
+}
+
+span.infonaam 	{
+	display: inline-block;
+	max-width: 250px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: -8px;
+}
+
+span.infokenmerk	{
+	font-weight: normal;
+	display: inline-block;
+	max-width: 344px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: -8px;
+}
+
+img.imgRow	{
+	height: 25px;
+	margin-bottom: -5px;
+	filter: brightness(0) invert(0) opacity(0.1);
+    margin: 0 10px -5px 10px;	
+}
+
+img.selected	{
+	filter: brightness(0) invert(0) opacity(0.7);
+}
+
+.rowStatus	{
+	display: inline-block;
+	background-image: linear-gradient(#ffc6c6, #fdeded, #ffc6c6);
+    border-radius: 15px;
+    padding: 2px 15px;
+    border: solid 2px #696969;
+}
+
+a.rowWijzigen	{
+	display: inline-block;
+}
+
+img.wijzigen	{
+	width: 22px;
+	filter: opacity(0.75);
+	margin: 0 10px -6px 10px;
+}
+
+div.rowVerwijderen	{
+	display: inline-block;
+}
+
+body.login{
+	overflow: hidden;
+	transition: none;
+}
+	
+.messagebox	{
+    background-color: #bb0000;
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+img.verwijderen	{
+	width: 23px;
+	margin: 0 0 -6px 1px;	
+}
+
+img.verwijderen:hover	{
+	cursor: pointer;
+}
+
+a.logout	{
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    right: 20px;
+    font-size: 23px;	
+}
+
+.login_container	{
+	width: 30%;
+    text-align: center;
+	margin: 10% auto 25% auto;
+}
+
+input#password	{
+	border: none;
+    font-size: 35px;
+    text-align: center;
+    background-color: rgb(232, 240, 254);
+    width: 90%;
+	font-style: italic;	
+	padding: 5px;
+	margin: 20px 0;
+}
+
+input#password::placeholder	{
+	opacity: 0.4;
+}
+
+input#password:focus	{
+	outline: none;
+}
+
+.timeline	{
+	width: 100%;
+	font-size: 15px;
+	padding: 20px 0 10px 0;
+	display: flex;
+	text-align: center;
+	overflow: auto;
+	background-color: #ffecec;	
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.event	{
+	position: relative;
+}
+
+div.fillerOnderkant	{
+	width: 300px;
+}
+
+div.widthInfoEvent	{
+	width: 300px;
+}
+	
+div.infoEvent	{
+	position:	absolute;
+	width: 300px;
+	background-color: #ffecec;
+    -webkit-box-shadow: 10px 0 5px -2px #888;
+    box-shadow: 30px 0 15px -15px #555;	
+	z-index: 1;
+    padding-top: 28px;
+    margin-top: -20px;
+	border-radius: 0 5px 5px 0;	
+}
+
+.submitKlein	{
+	font-size: 14px;	
+}
+
+.bovenkant	{
+	text-align: left;
+	border-bottom: 2px solid #616161;
+}
+
+.bovenkantOmschrijving	{
+	border-bottom: 2px solid #616161;	
+}
+
+.bovenkantT	{
+	border-bottom: 2px solid #616161;
+}
+
+.kleineDatum	{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 5px 0 30px;	
+}
+
+table.timelineInfo	{
+	font-size: 14px;
+	text-align: right;
+    margin: 0 auto;	
+}
+
+table.timelineInfo td:nth-child(2)	{
+	font-weight: normal;
+	font-size: 15px;
+	float:left;
+	padding-left: 10px;
+}
+
+.opmerkingb	{
+	background-image: linear-gradient(#525151, #797979, #525151);
+	color: #fff;
+	display: inline-block;
+    padding: 3px 15px;
+    font-size: 17px;
+	font-weight: bold;
+    border-radius: 2px 2px 0 0;	
+}
+
+img.imgTijdlijn	{
+	margin-bottom: -9px;
+	filter: brightness(0) invert(1);	
+	-ms-filter: brightness(0) invert(1);
+}
+
+img.brengen, img.afhalen	{
+	width: 65px;	
+}
+
+img.afhalen	{
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);	
+}
+
+img.repareren	{
+	width: 28px;
+}
+
+img.betalen	{
+	width: 28px;	
+}
+
+div.aanname	{
+	margin-top: 8px;
+}
+
+.opmerkingje	{
+	margin-top: 15px;
+}
+
+.opmerkingjeT	{
+	margin-top: 14px;	
+}
+
+.onderkant	{
+	padding: 10px 10px 20px 10px;	
+	width: 250px;	
+}
+
+.boxOnderkant	{
+	padding: 10px 10px 20px 10px;	
+	width: 150px;	
+}
+
+.afgehaaldOnderkant	{
+	padding: 10px 10px 20px 10px;	
+	width: 200px;	
+}
+
+.speech-bubble {
+	position: relative;
+	background: #d8d8d8;
+	border-radius: .4em;
+	color: #fff;
+	margin: 20px;
+	color: #000;
+	text-align: justify;
+	word-wrap: break-word;
+}
+
+img.OpmVerwijderen	{
+	width: 15px;
+    float: right;
+    filter: opacity(0.7);
+	cursor: pointer;
+	margin-left: 12px;
+}
+
+img.OpmWijzigen	{
+	width: 15px;
+    float: right;
+    filter: opacity(0.55);
+	cursor: pointer;
+	margin-left: 12px;
+}
+
+div.opmerking-toggle	{
+	background-image: linear-gradient(90deg, #525151, #797979, #525151);
+	width: 30px;
+	color: white;
+	margin: 15px 0 20px 0;
+	cursor:pointer;
+	height: 220px;	
+}
+
+div.opmToggleBovenkant	{
+	font-size: 30px;
+	margin: -9px;
+}
+
+
+div.opmToggleOnderkant	{
+	white-space: nowrap;
+    letter-spacing: 2px;
+	margin-top: 15px;
+    transform: rotate(90deg);	
+	-webkit-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+			-o-transform: rotate(90deg);
+				-ms-transform:rotate(90deg);
+}
+
+.opmToevoegen	{
+	border-radius: 5px 5px 0 0;
+    border: 2px solid #616161;
+    border-bottom: none;
+	padding: 3px 8px 2px 8px;
+	background-color: #ffffff;
+	background-image: none;
+}
+
+.opmToevoegenT	{
+	border-radius: 2px 2px 0 0;
+    border: 2px solid #616161;
+    border-bottom: none;
+	padding: 3px 8px 2px 8px;
+	background-color: #ffecec;
+	background-image: none;
+	color: #000;	
+}
+
+div.checkboxEvent {
+	margin-top: 15px;	
+}
+
+.disbovenkant	{
+	border-bottom: 2px solid #bbb;
+}
+
+.bordernone	{
+	border: none;
+}
+
+.smallinput	{
+	width: 100px;
+	padding: 1px 3px;
+}
+
+textarea.opmerking	{
+	width: 98%;
+}
+
+input[type="submit"], a.small-button, button.small-button, div.email-terug {
+	font-size: 20px;
+	color: #666;
+    border: 1px solid #ccc;
+	padding: 8px 10px;
+    font-family: Tahoma;
+    background: #f4f4f4;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+input[type="submit"].submitKlein, button.small-button	{
+	font-size: 14px;	
+}
+
+input[type="submit"]:hover, a.small-button:hover, button.small-button:hover {
+	color: #fff;
+	background-color: #888;
+}
+
+.buttonRight	{
+	float: right;	
+}
+
+.centertext	{
+	text-align: center;	
+}
+	
+.nogniet	{
+    background-image: linear-gradient(#bbbbbb, #cecdcd, #bbbbbb);
+}
+
+.nogniettext	{
+	color: #bbb;
+}
+
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;	
+}
+
+input[type="checkbox"].kleintje	{
+	width: 12px;
+	height: 12px;
+}
+
+.onmogelijkRepareren	{
+	font-weight: normal;
+	font-size: 11px;
+	margin-top: 10px;
+}
+
+.gebeurtenis	{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+table.reparatie	{
+	border-collapse: collapse;
+	font-size: 18px;
+}
+
+.inputGroot	{
+	font-family: inherit;
+	font-size: 18px;
+}
+
+.reparatie td	{
+	padding: 3px 9px 3px 9px;
+}
+
+#betaald_row	{
+	display: none;
+}
+
+#reparatie td:nth-child(2)	{
+	width: 70%
+}
+
+#reparatie td:first-child	{
+	border-right: 1px solid rgba(0, 0, 0, .8);
+	font-style: italic;	
+	text-align: right;	
+}
+
+.subtitle_table_cell {
+	position: absolute;
+	margin: -27px 0 0 10px;
+	padding: 10px 5px 5px 5px;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight:bold;
+}
+
+a.wijzigInfo	{
+	float: right;
+    margin-right: 30px;
+}
+
+div.bottom-buttons	{
+	margin-top: 30px;
+}
+
+div.bottom-button	{
+	display:inline-block;
+	width: 50%;
+	float:	left;
+}
+
+.button-right	{
+    margin-top: -9px;
+}
+
+div#reparatie{
+	padding-top: 135px;
+}
+
+div.footer	{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+	padding:15px 0;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+	background-color: #ffecec;
+}
+
+form.repselector	{
+	display: inline;
+	float: left;
+	font-family: inherit;
+	background: transparent;
+}
+
+select.monthselector, select.yearselector, select.statusselector	{
+	font-size: 30px;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	background: none;
+	border: none;
+	cursor: pointer;
+	-webkit-appearance: none; 
+		-moz-appearance: none;
+	appearance: none;       /* remove default arrow */
+	background: url(https://image.flaticon.com/icons/png/512/25/25623.png) 96% / 23px no-repeat #00000000;    /* add custom arrow */
+}
+
+select.statusselector	{
+	padding-right: 45px;		
+}
+
+select.yearselector, select.monthselector	{
+	padding-right: 35px;	
+}
+
+div.header	{
+	position:fixed;
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+	width: 100%;
+	font-size: 30px;
+	padding:0px 0;
+	-webkit-box-shadow:10px 10px 10px rgba(0, 0, 0, 0.10);
+	background-color: #0000001a;
+	z-index: 2;
+}
+
+div.inner-header	{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+div.subtitle	{
+	font-size: 36px;
+	letter-spacing: 1px;
+	margin: 8px 0 4px 0;
+}
+
+div.pagina_description	{
+	border-top: 1px solid #000000;
+    display: inline-block;
+	padding-left: 50px;
+	padding-top: 4px;
+}	
+
+input.OpmerkingDatum, input.OpmerkingNaam	{
+	background: none;
+	font-family: inherit;
+}	
+
+div.toevoegButton	{
+	position: fixed;
+    bottom: 75%;
+    right: 0;
+	background-image: linear-gradient(#525151, #797979, #525151);
+	color: #ffffff;
+	font-size: 60px;
+	padding: 0px 20px 13px 30px;
+	border-radius: 20px 0 0 20px;
+	z-index: 1;
+	border: 2px solid #ffffff;
+	border-width: 2px 0 2px 2px;
+	cursor: pointer;
+	box-shadow: 1px 18px 18px #616161;
+	transition: 0.7s;
+	transition-timing-function: ease-out;
+}
+
+div.toevoegButton:hover	{
+	padding-right: 80px;
+}
+
+img.printimg	{
+	width: 20px;
+    margin: 3px 0px 0px -25px;
+    position: absolute;
+    opacity: 0.7;	
+}
+
+span.printtext	{
+    margin-top: -5px;	
+}
+
+a.printlink	{
+	text-decoration: none;	
+	color: #545454;	
+}
+	
+div#printen	{
+    text-align: right;
+    margin-top: 15px;
+}
