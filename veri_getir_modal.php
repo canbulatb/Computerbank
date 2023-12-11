@@ -12,17 +12,16 @@ include 'function/dilSecimi.php';
  $kullaniciSQL='AND aangenomen_door=:username';
  if ($yetki==9) {
     $kullaniciSQL="";
-    if ($kullaniciSecim!="hepsi"){
-        $kullaniciSQL='AND aangenomen_door=:username' ;
-    }
-}else{$kullaniciSecim=$username;} #Burada admin değilse kullanıcıSecim kendi kullanıcı adına eşitleniyor.
+    if ($kullaniciSecim=="hepsi"){
+        $kullaniciSQL='' ;
+    }else{$kullaniciSQL='AND aangenomen_door=:username';}
+}else{} #Burada admin değilse kullanıcıSecim kendi kullanıcı adına eşitleniyor.
 
 
 
 $aramaTerimi="$anahtar";
 // Veritabanından verileri çekme sorgusu
-$sql = "SELECT * FROM reparatie WHERE  resultaten= :sonuc ".$kullaniciSQL;
-if ($sDate!=""){$sql = "SELECT * FROM reparatie WHERE resultaten= :sonuc ".$kullaniciSQL." AND datum_aanname BETWEEN :sDate AND :eDate"; }
+$sql = "SELECT * FROM reparatie WHERE resultaten= :sonuc AND sil=0 ".$kullaniciSQL." AND datum_aanname BETWEEN :sDate AND :eDate";
 if($anahtar!=""){$sql=$sql." AND naam_klant LIKE  concat('%', :aramaTerimi, '%')"; }
 echo "<script>console.log('Debug Objects: " . $sql. "' );</script>";
 echo "<script>console.log('Debug Objects: " . $aramaTerimi. "' );</script>";
@@ -30,26 +29,17 @@ echo "<script>console.log('Debug Objects: " . $kullaniciSecim. "' );</script>";
 echo "<script>console.log('Debug Objects: " . $anahtar. "' );</script>";
 
 
-
 $sth = $dbh->prepare($sql);
 
-
-if ($yetki==9) {
     if ($kullaniciSecim!="hepsi"){
-        $sth->bindParam(':username', $kullaniciSecim, PDO::PARAM_STR);
+    if ($yetki!=9) {$kullaniciSecim=$username;}
+    $sth->bindParam(':username', $kullaniciSecim, PDO::PARAM_STR);
     }
-}
 
-
-
-
-$sth->bindParam(':sonuc', $sonuc, PDO::PARAM_STR);
-// Bind parameters to statement variables.
-if ($sDate!=""){
+    $sth->bindParam(':sonuc', $sonuc, PDO::PARAM_STR);
     $sth->bindParam(':sDate', $sDate, PDO::PARAM_STR);
     $sth->bindParam(':eDate', $eDate, PDO::PARAM_STR);
 
-}
 if($anahtar!=""){$sth->bindParam(':aramaTerimi', $anahtar, PDO::PARAM_STR);}
 // Execute statement.
 $colCount=0;

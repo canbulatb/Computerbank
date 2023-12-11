@@ -19,7 +19,7 @@ include 'function/dilSecimi.php';
 
 
 
-$sql="SELECT  reparatie.*, reparatie.id AS reparatie_ID, users.id AS users_ID FROM reparatie JOIN users ON reparatie.user_id = users.id WHERE resultaten=0 AND (reparatie.user_id=:user_id OR users.kim_gorebilir=:user_id)"; #iki tabloyu birleştirdik.
+$sql="SELECT  reparatie.*, reparatie.id AS reparatie_ID, users.id AS users_ID FROM reparatie JOIN users ON reparatie.user_id = users.id WHERE resultaten=0  AND reparatie.sil=0 AND (reparatie.user_id=:user_id OR users.kim_gorebilir=:user_id)"; #iki tabloyu birleştirdik.
 
 
 $sth = $dbh->prepare($sql);
